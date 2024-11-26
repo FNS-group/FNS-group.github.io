@@ -8,7 +8,7 @@ git add *
 echo "git commit"
 git commit -m "$commit_statement"
 echo "git push"
-git push https://github.com/Owen-Liuyuxuan/papers_reading_sharing.github.io.git
+git push https://github.com/FNS-group/FNS-group.github.io.git
 echo "mkdocs gh-deploy"
 mkdocs gh-deploy
 echo "update local database"
