@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 张心泽
+title: FNS-group
 key: page-about
 mathjax: true
 ---
@@ -11,9 +11,7 @@ mathjax: true
 </div>
 <div class="cell cell--12 cell--md-auto" style="text-align: justify" markdown='1'>
 
-1993年12月生，中共党员。于2023年6月毕业于华中科技大学管理学院管理科学与工程专业，并获管理学博士学位。同年7月作为研究助理，加入华中科技大学霍普克罗夫特计算科学研究中心、计算机科学与技术学院人工智能与优化研究所。2024年2月进入华中科技大学计算机科学与技术博士后流动站，从事计算机软件与理论专业工作至今。
-
-研究方向为深度学习、序列数据分析、自然语言处理和时间序列预测。参与国家自然科学基金企业联合重点项目、重点专项项目、多项面上项目，以及多项国家电网科技项目和管理咨询项目。在CCF A类顶级会议ACL和人工智能领域权威SCI期刊Applied Soft Computing、Neurocomputing等国内外会议期刊发表论文十余篇。
+本团队主要从事海洋网络及其安全体系研究，研究方向包括：海洋网络架构与边缘计算、水声网络与安全、海洋大数据与安全、海洋信息感知与智能处理等
 
 <!-- Most recently, I focus on the adversarial attack for neural machine translation, randomness in deep neural network (DNN), and DNN based time series forecasting models. -->
 
