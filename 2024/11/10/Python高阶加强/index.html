@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"readmengk90.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"home":"/","about":"/about","tags":"/tags"}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="高阶加强">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python高阶加强">
+<meta property="og:url" content="https://readmengk90.github.io/2024/11/10/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/index.html">
+<meta property="og:site_name" content="东瓶西镜">
+<meta property="og:description" content="高阶加强">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%B1%BB.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%B1%BB2.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%AF%B9%E8%B1%A1.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%B0%81%E8%A3%85.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%A7%81%E6%9C%89.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%A7%81%E6%9C%89png.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%BB%A7%E6%89%BF.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%A4%9A%E7%BB%A7%E6%89%BF.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%AE%B9%E5%99%A8%E6%B3%A8%E8%A7%A3.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E6%B3%A8%E9%87%8A%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%BD%A2%E5%8F%82%E6%B3%A8%E8%A7%A3.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/Union.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/Union02.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%A4%9A%E6%80%81.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E6%8A%BD%E8%B1%A1%E7%B1%BB.png">
+<meta property="og:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E6%8E%A5%E5%8F%A3.png">
+<meta property="article:published_time" content="2024-11-10T06:57:36.776Z">
+<meta property="article:modified_time" content="2024-11-11T02:21:29.713Z">
+<meta property="article:author" content="Amber">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://readmengk90.github.io/images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%B1%BB.png">
+
+<link rel="canonical" href="https://readmengk90.github.io/2024/11/10/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python高阶加强 | 东瓶西镜</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="东瓶西镜" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">东瓶西镜</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome to my blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>photos</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/readMengK90/readMengK90.github.io.git" class="github-corner" title="readMengK90 GitHub" aria-label="readMengK90 GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://readmengk90.github.io/2024/11/10/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Amber">
+      <meta itemprop="description" content="programming study">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="东瓶西镜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python高阶加强
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-11-10 14:57:36" itemprop="dateCreated datePublished" datetime="2024-11-10T14:57:36+08:00">2024-11-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-11-11 10:21:29" itemprop="dateModified" datetime="2024-11-11T10:21:29+08:00">2024-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+            <div class="post-description"><center>高阶加强</center></div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="1-初识对象"><a href="#1-初识对象" class="headerlink" title="1.初识对象"></a>1.初识对象</h3><p>​	希望数据的组织可以达到简洁统一。</p>
+<table>
+<thead>
+<tr>
+<th align="center">生活中</th>
+<th align="center">程序中</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">设计表格</td>
+<td align="center">设计类</td>
+</tr>
+<tr>
+<td align="center">打印生产表格</td>
+<td align="center">创建对象</td>
+</tr>
+<tr>
+<td align="center">填写表格</td>
+<td align="center">对象属性赋值</td>
+</tr>
+</tbody></table>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%B1%BB.png"></p>
+<h3 id="2-成员方法"><a href="#2-成员方法" class="headerlink" title="2.成员方法"></a>2.成员方法</h3><p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%B1%BB2.png"></p>
+<p>​			定义在类内部的函数称之为方法</p>
+<p>在类中定义成员方法和定义函数基本一致，但仍有细微区别:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">方法体</span>(<span class="params">self,形参<span class="number">1</span>,.....,形参N</span>):</span><br><span class="line">    方法体</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">可以看到，在方法定义的参数列表中，有一个:self关键字</span></span><br><span class="line"><span class="string">self关键字是成员方法定义的时候，必须填写的。</span></span><br><span class="line"><span class="string">	它用来表示类对象自身的意思。</span></span><br><span class="line"><span class="string">	当我们使用类对象调用方法时，self会自动被python传入,不用传入。</span></span><br><span class="line"><span class="string">	在方法内部，想要方法类的成员变量，必须使用self</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-类和对象"><a href="#3-类和对象" class="headerlink" title="3.类和对象"></a>3.类和对象</h3><p>使用程序中的类，可以完美的描述现实世界的事物(属性+行为)。</p>
+<p>为什么非要创建对象才能使用呢?</p>
+<p>​	类只是一种程序内的”设计图纸”，需要基于图纸生产实体(对象),才能正常工作。</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%AF%B9%E8%B1%A1.png"></p>
+<p><strong>面向对象的编程思想: 设计类，基于类创建对象，由对象做具体的工作。</strong></p>
+<h3 id="4-构造方法"><a href="#4-构造方法" class="headerlink" title="4.构造方法"></a>4.构造方法</h3><p>Python类可以使用: <strong>init</strong>()方法，称之为构造方法</p>
+<p>可以实现：在创建类对象(构造类)的时候，会自动执行。</p>
+<p>​		   在创建类对象(构造类)的时候，将传入参数自动传递给__init__方法使用。</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95.png"></p>
+<p>不省略的话，构造方法就说赋值。</p>
+<p>省略的话，构造方法就说先声明并且赋值。</p>
+<h3 id="5-其他内置方法-魔术方法"><a href="#5-其他内置方法-魔术方法" class="headerlink" title="5.其他内置方法(魔术方法)"></a>5.其他内置方法(魔术方法)</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__init__</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__str__ 字符串方法</span><br></pre></td></tr></table></figure>
+
+<p>​	用于定义对象的<strong>字符串表示</strong>，即当你使用 <code>print()</code> 函数或者将对象转换为字符串时，Python 会调用该方法来生成对象的字符串形式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">__str__的作用:</span><br><span class="line">1.自定义对象的字符串表示：当你打印对象时，Python 默认会输出对象的内存地址（例如 &lt;__main__.MyClass object at 0x7f9b1c3a1a30&gt;），这对于大多数对象来说并不是很有意义。通过实现 __str__方法，你可以提供一个更具可读性、具有描述性的字符串。</span><br><span class="line"></span><br><span class="line">2.与 print()函数结合使用：print()函数会自动调用对象的__str__方法来获取对象的字符串表示，然后将其输出到控制台。</span><br><span class="line"></span><br><span class="line">3.用于str()函数：除了print()外，str()函数也会调用对象的__str__方法。例如，如果你使用 str(obj)，Python 会返回你在__str__中定义的字符串。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 定义自定义的字符串表示</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;Person(name=<span class="subst">&#123;self.name&#125;</span>, age=<span class="subst">&#123;self.age&#125;</span>)&quot;</span></span><br><span class="line"><span class="comment"># 创建一个 Person 对象</span></span><br><span class="line">person = Person(<span class="string">&quot;Alice&quot;</span>, <span class="number">30</span>)</span><br><span class="line"><span class="comment"># 打印对象，调用 __str__ 方法</span></span><br><span class="line"><span class="built_in">print</span>(person)  		<span class="comment"># 输出：Person(name=Alice, age=30)</span></span><br><span class="line"><span class="comment"># 使用 str() 函数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(person))  <span class="comment"># 输出：Person(name=Alice, age=30)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__lt__ 小于符合比较方法</span><br></pre></td></tr></table></figure>
+
+<p>​		<code>__lt__</code> 方法使得对象能够与其他对象进行小于比较（即 <code>&lt;</code> 运算符）。你可以在自定义类中实现这个方法，来自定义两个对象的比较规则。比如，在比较两个对象时，你可以根据对象的某些属性来决定它们的大小关系**(不使用该方法直接对两个类对象比较是不可以的)**。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__lt__</span>(<span class="params">self, other</span>):</span><br><span class="line">	<span class="comment"># 返回一个布尔值：True 或 False</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>self</code> 是当前对象（左侧的对象），</li>
+<li><code>other</code> 是要比较的另一个对象（右侧的对象）。</li>
+<li>如果当前对象小于另一个对象，则返回 <code>True</code>，否则返回 <code>False</code>。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,name,age</span>):</span><br><span class="line">        self.name=name</span><br><span class="line">        self.age=age</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__lt__</span>(<span class="params">self,other</span>):</span><br><span class="line">        <span class="keyword">return</span> self.age&lt;other.age</span><br><span class="line">stu1=Student(<span class="string">&quot;A&quot;</span>,<span class="number">11</span>)</span><br><span class="line">stu2=Student(<span class="string">&quot;B&quot;</span>,<span class="number">13</span>)</span><br><span class="line"><span class="built_in">print</span>(stu1&lt;stu2) <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(stu1&gt;stu2) <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__le__ 小于等于比较符合方法</span><br></pre></td></tr></table></figure>
+
+<p>魔术方法：<code>__le__</code>可用于：&lt;&#x3D;,&gt;&#x3D;两种比较运算符上，逻辑上和lt一样。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__eq__ 相等比较运算符实现方法</span><br></pre></td></tr></table></figure>
+
+<p>不使用<code>__eq__</code>这个方法进行比较，不会报错就相当于直接比较内存地址(False)</p>
+<p>面向对象编程是基于模板(类)去创建实体(对象)，使用对象完成功能开发。面向对象包含3大主要特性：分别是封装,继承和多态。</p>
+<h3 id="6-封装-思想"><a href="#6-封装-思想" class="headerlink" title="6.封装(思想)"></a>6.封装(思想)</h3><p>面向对象是将现实世界事物的属性和行为描述为程序世界的类的成员变量和成员方法。</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%B0%81%E8%A3%85.png"></p>
+<p>现实世界中的事物有不公开的属性和行为，作为现实事物在程序中映射的类，也应该支持对私有不公开的属性和行为进行描述。</p>
+<p>类中提供了私有成员的形式来支持</p>
+<p>​	私有成员变量：变量名以<code>__</code>开头(两个下划线)</p>
+<p>​	私有成员方法：方法名以<code>__</code>开头(两个下划线)</p>
+<p>即可完成私有成员的设置</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%A7%81%E6%9C%89.png"></p>
+<p><strong>私有成员不能被类对象直接使用，但是可以被类中的其他成员去使用。</strong></p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%A7%81%E6%9C%89png.png"></p>
+<p>私有成员的意义:在类中提供仅供内部使用的属性和方法，而不对外开放(类对象无法使用)。</p>
+<h3 id="7-继承"><a href="#7-继承" class="headerlink" title="7.继承"></a>7.继承</h3><p>单继承：</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%BB%A7%E6%89%BF.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class 类名(父类名):</span><br><span class="line"></span><br><span class="line">​	类内容体</span><br></pre></td></tr></table></figure>
+
+<p>多继承</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%A4%9A%E7%BB%A7%E6%89%BF.png"></p>
+<p>输出父类同名的成员属性时，谁先来的谁优先(继承)。</p>
+<p>pass关键字它用于占位，表示“什么也不做”。通常，它用于需要语法上有内容但不希望执行任何操作的场景。</p>
+<p><strong>继承-复写</strong></p>
+<p>复写:子类继承父类的成员属性和成员方法后，如果对其不满意，那么可以进行复写</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Phone</span>:</span><br><span class="line">    IMEI=<span class="literal">None</span>   <span class="comment"># 序列号</span></span><br><span class="line">    producer = <span class="string">&quot;ITCAST&quot;</span> <span class="comment"># 厂商</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">call_by_5g</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;父类的5g通话&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyPhone</span>(<span class="title class_ inherited__">Phone</span>):</span><br><span class="line">    producer=<span class="string">&quot;ITHEIMA&quot;</span>   <span class="comment"># 复写父类属性</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">call_by_5g</span>(<span class="params">self</span>): <span class="comment"># 复写父类方法</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;子类的5g同话&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>继承-调用父类的同名成员</strong></p>
+<p>一旦复写父类成员，那么类对象调用成员的时候，就会调用复写后的新成员，如果需要使用被复写的父类的成员，需要特殊的调用方式:</p>
+<table>
+<thead>
+<tr>
+<th align="center">方式一</th>
+<th align="center">方式二</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">调用父类成员</td>
+<td align="center">使用super()调用父类成员</td>
+</tr>
+<tr>
+<td align="center">使用成员变量：父类名.成员变量</td>
+<td align="center">使用成员变量：super().成员变量</td>
+</tr>
+<tr>
+<td align="center">使用成员方法：父类名.成员方法(self)</td>
+<td align="center">使用成员方法：super().成员方法()</td>
+</tr>
+</tbody></table>
+<p>注意:只可以在子类内部调用父类的同名成员，子类的实体类对象调用默认是调用有子类复写的。</p>
+<h3 id="8-类型注解"><a href="#8-类型注解" class="headerlink" title="8.类型注解"></a>8.类型注解</h3><p>为什么内置模块的方法可以提示类型，而我们自己定义的就不行呢。其实是因为Pycharm无法通过代码确认应传入什么类型。</p>
+<p>类型注解：引入类型注解以方便静态检查工具，IDE等三方工具。类型注解是在代码中涉及数据交互的地方，提供数据类型的注解(显示的方式)。</p>
+<p>类型注解只是提示性的，并非决定性的，数据类型和注解类型无法对应也不会导致错误。</p>
+<p>主要功能:</p>
+<p>​	帮助第三方IDE工具(如pycharm)对代码进行类型推断，协助做代码提示</p>
+<p>​	帮助开发者自身对变量进行类型注释</p>
+<p>支持：</p>
+<p>​	变量的类型注解</p>
+<p>​	函数(方法)形参列表和返回值的类型注解</p>
+<p><strong>变量的类型注解：</strong></p>
+<p>​	<img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3.png"></p>
+<p>​	注意:</p>
+<ul>
+<li><p>元组类型设置类型详细注解，需要将每一个元素都标记出来(详细）</p>
+</li>
+<li><p>字典类型设置类型详细注解，需要2个类型，第一个是key第二个是value(详细)</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%AE%B9%E5%99%A8%E6%B3%A8%E8%A7%A3.png"></p>
+</li>
+</ul>
+<p>​	<strong>通过注释进行类型注解</strong></p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E6%B3%A8%E9%87%8A%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3.png"></p>
+<p><strong>函数(方法)形参列表和返回值的类型注解：</strong></p>
+<p>形参类型注解</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%BD%A2%E5%8F%82%E6%B3%A8%E8%A7%A3.png"></p>
+<p>函数和方法的形参类型注解语法:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数方法名</span>(<span class="params">形参名:类型,形参名:类型,.........</span>):</span><br><span class="line">	passde</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x:<span class="built_in">int</span>,y:<span class="built_in">int</span></span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br></pre></td></tr></table></figure>
+
+<p>返回值类型注解</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数方法名</span>(<span class="params">形参名:类型,形参名:类型,.........</span>)-&gt;返回值类型:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Union类型：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">my_list=[<span class="number">1</span>,<span class="number">2</span>,<span class="string">&quot;itcast&quot;</span>,<span class="string">&quot;itheima&quot;</span>]</span><br><span class="line">my_dict=&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;周杰伦&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">21</span>&#125;</span><br><span class="line"><span class="comment"># 混合类型的类型注解如何描述</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/Union.png"></p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/Union02.png"></p>
+<h3 id="9-多态"><a href="#9-多态" class="headerlink" title="9.多态"></a>9.多态</h3><p>多态:指的是多种状态，即完成某个行为时，使用不同的对象会得到不同的状态</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E5%A4%9A%E6%80%81.png"></p>
+<p>父类做定义声明，子类做实际工作，用来获得同一行为，不同状态。</p>
+<p>多态-应用场景二:</p>
+<p>​	<img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E6%8A%BD%E8%B1%A1%E7%B1%BB.png"></p>
+<p>抽象类(接口)就好比定义一个标准</p>
+<p><img src="/../images/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/%E6%8E%A5%E5%8F%A3.png"></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/WeChat.png" alt="Amber 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Amber 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Amber
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://readmengk90.github.io/2024/11/10/Python%E9%AB%98%E9%98%B6%E5%8A%A0%E5%BC%BA/" title="Python高阶加强">https://readmengk90.github.io/2024/11/10/Python高阶加强/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/11/09/Python%E5%9F%BA%E7%A1%80%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B/" rel="prev" title="Python基础综合案例">
+      <i class="fa fa-chevron-left"></i> Python基础综合案例
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/11/11/SQL%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/" rel="next" title="SQL从入门到实战">
+      SQL从入门到实战 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%88%9D%E8%AF%86%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">1.初识对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">2.成员方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.</span> <span class="nav-text">3.类和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">4.构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%85%B6%E4%BB%96%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95-%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">5.其他内置方法(魔术方法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%B0%81%E8%A3%85-%E6%80%9D%E6%83%B3"><span class="nav-number">6.</span> <span class="nav-text">6.封装(思想)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E7%BB%A7%E6%89%BF"><span class="nav-number">7.</span> <span class="nav-text">7.继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3"><span class="nav-number">8.</span> <span class="nav-text">8.类型注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E5%A4%9A%E6%80%81"><span class="nav-number">9.</span> <span class="nav-text">9.多态</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Amber"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Amber</p>
+  <div class="site-description" itemprop="description">programming study</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:2770576166@qq.com" title="E-Mail → mailto:2770576166@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.google.com.hk/" title="Google → https:&#x2F;&#x2F;www.google.com.hk&#x2F;" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/readMengK90/readMengK90.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;readMengK90&#x2F;readMengK90.github.io" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Amber</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">158k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4:48</span>
+</div>
+  <div class="powered-by">
+    
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
