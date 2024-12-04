@@ -2,7 +2,7 @@
 layout: article
 titles:
   # @start locale config
-  en      : &EN       Xinze Zhang
+  en      : &EN       FNS-group
   en-GB   : *EN
   en-US   : *EN
   en-CA   : *EN
@@ -33,7 +33,7 @@ mathjax: true
 </div>
 <div class="cell cell--12 cell--md-auto" style="text-align: justify" markdown='1'>
 
-I am a postdoctoral researcher, affiliated with [Hopcroft Center on Computing Science](http://mathcenter.hust.edu.cn/Research_Groups/John_Hopcroft_Lab_for_Data_Science.htm),  in the School of Computer Science and Technology, [Huazhong University of Science and Technology (HUST)](http://english.hust.edu.cn/), China. I received my Ph.D. degree in management in 2023 from HUST, and received my M.P.Ac. degree in 2018 from the same university. I received my B.Ac. degree in 2015 from [Zhongnan University of Economics and Law (ZUEL)](http://english.zuel.edu.cn//), China.
+本团队主要从事海洋网络及其安全体系研究，研究方向包括：海洋网络架构与边缘计算、水声网络与安全、海洋大数据与安全、海洋信息感知与智能处理等
 
 My research interests lie primarily in machine learning for sequential data, especially in [adversarial machine learning](https://en.wikipedia.org/wiki/Adversarial_machine_learning), [neural machine translation](https://en.wikipedia.org/wiki/Neural_machine_translation), [time series forecasting](https://en.wikipedia.org/wiki/Time_series#Prediction_and_forecasting), and [automatic modulation classification](https://link.springer.com/chapter/10.1007/978-3-319-44188-7_16).
 
