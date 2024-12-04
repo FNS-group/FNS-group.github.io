@@ -1,4 +1,8 @@
 header:
+
+  - title:      GitHub
+    url:        https://github.com/xinzezhang
+  
   - titles:
       # @start locale config
       en      : &EN       Archive
@@ -21,32 +25,17 @@ header:
       fr-CH   : *FR
       fr-FR   : *FR
       fr-LU   : *FR
-      tr      : &TR       Arşivdekiler
       # @end locale config
     url: /archive.html
 
-  - titles:
-      # @start locale config
-      en      : &EN       About
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  关于
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  關於
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
-      ko      : &KO       소개
-      ko-KR   : *KO
-      fr      : &FR       À propos
-      fr-BE   : *FR
-      fr-CA   : *FR
-      fr-CH   : *FR
-      fr-FR   : *FR
-      fr-LU   : *FR
-      tr      : &TR       Hakkında
-      # @end locale config
+  # - title:      Publication
+  #   url:        /pubs.html
+  #   key:        pubs
+
+
+
+  - title:      About
     url: /about.html
+
+  - title:       关于
+    url: /about-zh.html

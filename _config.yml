@@ -19,10 +19,10 @@
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl : # does not include hostname
-title   : Your Site Title
+baseurl : #
+title   : Xinze Zhang
 description: > # this means to ignore newlines until "Language & timezone"
-  Your Site Description
+  Homepage of xinze zhang.
 
 
 ## => Language and Timezone
@@ -35,11 +35,11 @@ timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for
 ##############################
 author:
   type      : # "person" (default), "organization"
-  name      : Your Name
+  name      : Xinze Zhang
   url       :
-  avatar    : # path or url of avatar image (square)
-  bio       : I am an amazing person.
-  email     :
+  avatar    : ./assets/images/profile-xinze.jpg
+  bio       : PhD Candidate in Huazhong University of Science and Technology.
+  email     : xinze@hust.edu.cn
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
   twitter   : # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
   weibo     : # "user_id"   the last part of your profile url, e.g. https://www.weibo.com/user_id/profile?...
@@ -84,8 +84,8 @@ toc:
 ## => Markdown Enhancements
 ##############################
 ## Mathjax
-mathjax: # false (default), true
-mathjax_autoNumber: # false (default), true
+mathjax: true
+mathjax_autoNumber: true
 
 ## Mermaid
 mermaid: # false (default), true
@@ -198,10 +198,24 @@ exclude:
   - /docs
   - /node_modules
   - /screenshots
-  - /test
+  # - /test
   - /vendor
+  # - /_posts
+  # - /index.html
+
+# collections_dir: docs
+collections:
+  # docs:
+  #   output: true
+  pub_ed:
+    output: true
+  pub_ur:
+    output: true
+  pub_wo:
+    output: true
 
 defaults:
+  ## posts
   - scope:
       path: ""
       type: posts
@@ -214,7 +228,25 @@ defaults:
       show_edit_on_github: true
       show_subscribe: true
       pageview: true
-
+  ## pubs
+  - scope:
+      path: ""
+      type: pub_ed
+    values:
+      nav_key: pubs
+  - scope:
+      path: ""
+      type: pub_ur
+    values:
+      nav_key: samples
+      show_date: false
+  - scope:
+      path: ""
+      type: pub_wo
+    values:
+      layout: article
+      nav_key: samples
+      show_date: false
 
 ## => Plugins
 ##############################
