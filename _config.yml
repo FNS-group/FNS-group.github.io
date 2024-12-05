@@ -1,16 +1,16 @@
 # Site settings
-title:          Yester Vault
-description:    "迷うことを迷わない"
-url:            "https://Yestercafe.github.io"
-timezone:       Asia/Shanghai
+title:          FNS-group
+description:    "future network and security"
+url:            "https://FNS-group.github.io"
+timezone:       Asia/Haikou
 global_flags:
   enable_homepage_desc: true
 
 # Author
 author:
-  name:         Ivan Chien
-  url:          https://github.com/Yestercafe
-  email:        qyc027@gmail.com
+  name:         Daoxu Qin
+  url:          https://github.com/FNS-group
+  email:        Daoxuq@gmail.com
 
 # Build settings
 markdown:       kramdown
