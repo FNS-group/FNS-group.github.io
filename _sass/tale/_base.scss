@@ -1,0 +1,250 @@
+* {
+  @include box-sizing;
+  line-height: 1.5;
+}
+
+html,
+body {
+  // background: url('/assets/bg.jpg') center center no-repeat fixed;
+  // background-size: auto 100vh;
+  // @supports (-webkit-touch-callout: none) {
+  //   background: url('/assets/bg.jpg') center center no-repeat scroll;
+  //   background-size: auto 100vh;
+  // }
+
+  // background-color: rgba(255, 255, 255, .85);
+  // background-blend-mode: lighten;
+  background-color: $white;
+
+  color: $default-color;
+  margin: 0;
+  padding: 0;
+
+  @media (prefers-color-scheme: dark) {
+    color: $dark-default-color;
+    // background-color: rgba($color: $dark-white, $alpha: .85);
+    // background-blend-mode: darken;
+    background-color: $dark-white;
+  }
+}
+
+html {
+  // font-family: $serif-primary;
+  font-size: 14px;
+  overflow-y: scroll;
+
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $default-shade;
+  font-family: $sans-serif;
+  line-height: normal;
+  margin-top: 0;
+  @media (prefers-color-scheme: dark) {
+    color: $dark-default-shade;
+  }
+}
+
+a {
+  color: $preset5;
+  text-decoration: none;
+  overflow-wrap: break-word;
+
+  @media (prefers-color-scheme: dark) {
+    color: $preset2;
+  }
+}
+
+.post, .wikipage, footer {
+  a {
+    padding-left: 1px;
+    padding-right: 1px;
+    box-shadow: inset 0 -0.05em 0 $preset5;
+    transition: all 0.2s ease-in-out;
+    @media (prefers-color-scheme: dark) {
+      box-shadow: inset 0 -0.05em 0 $preset2;
+    }
+
+    &:link, &:active, &:hover, &:visited {
+      text-decoration: none !important;
+    }
+
+    &:hover {
+      color: $white;
+      box-shadow: inset 0 -2rem 0 0 $preset5;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-white;
+        box-shadow: inset 0 -2rem 0 0 $preset2;
+      }
+    }
+  }
+}
+
+blockquote {
+  border-left: .25rem solid $grey-2;
+  color: $grey-1;
+  margin: .8rem 0;
+  padding: .5rem 1rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 600px) {
+    padding: 0 5rem 0 1.25rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    border-left: .25rem solid $dark-grey-2;
+    color: $dark-grey-1;
+  }
+}
+
+img {
+  display: block;
+  margin: 0 0 1rem;
+  max-width: 90%;
+}
+
+td {
+  vertical-align: top;
+}
+
+.bottom-right-floating {
+  background: $default-tint;
+  color: $white;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  border-width: 50%;
+  border: none;
+  right: 32px;
+  bottom: 32px;
+  left: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-default-tint;
+    color: $dark-white;
+  }
+}
+
+.bottom-right-floating:active {
+  background-color: $grey-1;
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-grey-1;
+  }
+}
+
+.bottom-right-floating-icon {
+  display: block;
+  width: 30px;
+  justify-content: center;
+  height: 30px;
+  pointer-events: none;
+}
+
+.sakana {
+  position: fixed;
+  display: flex;
+  left: 0px;
+  bottom: 40px;
+}
+
+table {
+  margin: 1.5rem auto;
+}
+
+table, th, td {
+  border: 2px dotted $preset6;
+  border-collapse: collapse;
+  padding: 12px;
+
+  @media (prefers-color-scheme: dark) {
+    border: 2px dotted $preset1;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: $default-tint;
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-default-tint;
+  }
+
+  &:hover {
+    background-color: $preset6;
+    @media (prefers-color-scheme: dark) {
+      background-color: $preset1;
+    }
+  }
+
+  &:active {
+    background-color: $preset5;
+    @media (prefers-color-scheme: dark) {
+      background-color: $preset3;
+    }
+  }
+}
+
+ul, ol {
+  padding-left: 1rem;
+}
+
+.disabled {
+  color: $grey-2;
+
+  @media (prefers-color-scheme: dark) {
+    color: $dark-grey-2;
+  }
+}
+
+li {
+  // line-height: 2;
+  margin: 0.5em 0;
+}
+
+#toc {
+  margin-bottom: 1rem;
+}
+
+.toc {
+  &-summary {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: $sans-serif;
+  }
+
+  &-list {
+    margin-top: 5px;
+  }
+
+  &-item {
+    margin: 0;
+  }
+}

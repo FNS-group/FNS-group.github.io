@@ -1,37 +1,25 @@
+<footer>
+  <span>
+    &copy; 2019-<time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> <a href="https://github.com/Yescafe">{{ site.author.name }}</a>. Based on Jekyll & <a href="https://github.com/chesterhow/tale/">Tale</a> theme. Welcome to fork & start with <a href="https://github.com/Yescafe/Yescafe.github.io">this polished theme</a>.
+  </span><br>
+  <span>
+    {{ site.title }} - {{ site.description }}
+  </span>
 
-<footer class="footer py-4 js-page-footer">
-  <div class="main">
-
-    {%- assign _site_author = site.author -%}
-    {%- if _site_author.type == 'organization' -%}
-      {%- assign _site_author_itemtype = 'http://schema.org/Organization' -%}
-    {%- else -%}
-      {%- assign _site_author_itemtype = 'http://schema.org/Person' -%}
-    {%- endif -%}
-
-    <div itemscope itemtype="{{ _site_author_itemtype }}">
-      <meta itemprop="name" content="{{ _site_author.name }}">
-      {%- assign _site_author_url = _site_author.url | default: '/'-%}
-      {%- include snippets/get-nav-url.html path=_site_author_url -%}
-      {%- assign _site_author_url = __return -%}
-      <meta itemprop="url" content="{{ _site_author_url }}">
-      {%- if _site_author.bio -%}
-        <meta itemprop="description" content="{{ _site_author.bio }}">
-      {%- endif -%}
-      <div class="footer__author-links">
-        {%- include author-links.html author=_site_author -%}
-      </div>
-    </div>
-    {%- include snippets/get-locale-string.html key='COPYRIGHT_DATES' -%}
-    {%- assign _locale_copyright_dates = __return -%}
-    <div class="site-info mt-2">
-      <div>
-        {%- include snippets/get-locale-string.html key='COPYRIGHT_DATES' -%}
-        {%- assign _locale_copyright_dates = __return -%}
-        © {{ site.title }} {{ _locale_copyright_dates }},
-        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
-        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
-      </div>
-    </div>
+  {% if site.components.busuanzi.enabled == true %}
+  <script async src="{{ assets_base_url }}/assets/js/busuanzi.pure.mini.js"></script>
+  <div class="mobile-hidden" style="margin-top:8px">
+    <span id="busuanzi_container_site_pv" style="display:none">
+      visiting counts <span id="busuanzi_value_site_pv"></span>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+      / visitor counts <span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_page_pv" style="display:none">
+      {% if site.components.busuanzi.start_date %}
+      / stats from {{ site.components.busuanzi.start_date }}
+      {% endif %}
+    </span>
   </div>
+  {% endif %}
 </footer>

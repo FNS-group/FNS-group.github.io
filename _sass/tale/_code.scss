@@ -1,0 +1,64 @@
+pre,
+code {
+  font-family: $monospaced;
+}
+
+code {
+  border-radius: 3px;
+  color: $code-color;
+  font-size: 90%;
+
+  @media (prefers-color-scheme: dark) {
+    color: $dark-code-color;
+  }
+}
+
+pre {
+  overflow-y: auto;
+  line-height: 1.2;
+  padding: 20px 16px;
+
+  overflow-x: auto;
+  text-overflow: clip;
+
+  border: 1px dashed $default-tint;
+  @media (prefers-color-scheme: dark) {
+    border: 1px dashed $dark-default-tint;
+  }
+}
+
+pre code {
+  color: inherit;
+  font-size: 88%;
+  padding: 0;
+}
+
+p code {
+  padding: 2px 4px;
+  background-color: $grey-3;
+  border-radius: 4px;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-grey-3;
+  }
+}
+
+.highlight {
+  border-radius: 3px;
+  line-height: 1.2;
+  margin: 1rem 0;
+
+  .lineno {
+    color: $default-tint;
+    display: inline-block; // Ensures the null space also isn't selectable
+    padding: 0 .75rem 0 .25rem;
+    // Make sure numbers aren't selectable
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    
+    @media (prefers-color-scheme: dark) {
+      color: $dark-default-tint;
+    }
+  }
+}

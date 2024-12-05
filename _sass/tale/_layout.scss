@@ -1,0 +1,127 @@
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 80%;
+}
+
+main,
+footer,
+.nav-container {
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  width: 80%;
+}
+
+.nav {
+  box-shadow: 0 2px 2px -2px $shadow-color;
+  overflow: auto;
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 2px 2px -2px $dark-shadow-color;
+  }
+
+  &-container {
+    margin: 1rem auto;
+    position: relative;
+    text-align: center;
+  }
+
+  &-title {
+    @include transition(all .2s ease-out);
+    color: $default-color;
+    font-family: $sans-serif;
+    display: inline-block;
+    margin: 0;
+    margin-left: .2rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-default-color;
+    }
+
+    &:hover,
+    &:focus {
+      color: $preset6;
+
+      @media (prefers-color-scheme: dark) {
+        color: $preset1;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  li {
+    @include transition(all .2s ease-out);
+    color: $default-color;
+    display: inline-block;
+    opacity: .6;
+    padding: 0 28px 0 0;
+    line-height: 2;
+    margin: 0;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-default-color;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  a {
+    color: $default-color;
+    font-family: $sans-serif;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-default-color;
+    }
+  }
+
+  &-search {
+    filter:invert(32%) sepia(0%) saturate(1246%) hue-rotate(155deg) brightness(88%) contrast(77%);
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(81%) sepia(0%) saturate(0%) hue-rotate(344deg) brightness(100%) contrast(96%);
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .nav {
+    &-container {
+      text-align: left;
+    }
+
+    ul {
+      bottom: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+footer {
+  font-family: $serif-secondary;
+  padding: 2rem 0;
+  text-align: center;
+
+  span {
+    color: $default-color;
+    font-size: .8rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-default-color;
+    }
+  }
+}

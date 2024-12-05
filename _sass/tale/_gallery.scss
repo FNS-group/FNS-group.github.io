@@ -1,0 +1,173 @@
+.gallery {
+  &-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+
+    &-title {
+      @include transition(all 6s cubic-bezier(.13,.41,.43,.92));
+      color: $default-shade;
+      font-family: $clock;
+      font-size: 60px;
+      font-weight: 600;
+      text-align: center;
+      display: block;
+      margin: 0 0rem;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-default-shade;
+      }
+    }
+
+    &-aboveline {
+      @include transition(all 6s cubic-bezier(.13,.41,.43,.92));
+      border-bottom: 10px solid $default-shade;
+      display: block;
+      margin: auto;
+      width: 0rem;
+
+      @media (prefers-color-scheme: dark) {
+        border-bottom: 10px solid $dark-default-shade;
+      }
+    }
+
+    &-underline {
+      @include transition(all 6s cubic-bezier(.13,.41,.43,.92));
+      border-top: 10px solid $default-shade;
+      display: block;
+      margin: auto;
+      width: 0rem;
+
+      @media (prefers-color-scheme: dark) {
+        border-top: 10px solid $dark-default-shade;
+      }
+    }
+
+    &-leftline {
+      @include transition(all 6s cubic-bezier(.13,.41,.43,.92));
+      border-right: 10px solid $default-shade;
+      height: 0rem;
+
+      @media (prefers-color-scheme: dark) {
+        border-right: 10px solid $dark-default-shade;
+      }
+    }
+
+    &-rightline {
+      @include transition(all 6s cubic-bezier(.13,.41,.43,.92));
+      border-left: 10px solid $default-shade;
+      height: 0rem;
+
+      @media (prefers-color-scheme: dark) {
+        border-left: 10px solid $dark-default-shade;
+      }
+    }
+
+    &-container {
+      width: 320px;
+      height: 200px;
+    }
+
+    &:hover {
+      .gallery-header-title {
+        color: $preset3;
+      }
+      
+      .gallery-header-aboveline, 
+      .gallery-header-underline,
+      .gallery-header-leftline, 
+      .gallery-header-rightline {
+        border-color: $preset3;
+      }
+      .gallery-header-aboveline, 
+      .gallery-header-underline {
+        width: 100%;
+      }
+      
+      .gallery-header-leftline, 
+      .gallery-header-rightline {
+        height: 200px;
+      }
+    }
+  }
+
+  &-details {
+    cursor: pointer;
+
+    &-summary {
+      margin-top: 30px;
+      margin-bottom: 5px;
+      font-size: 27px;
+      outline: none;
+      box-shadow: none;
+    }
+
+    &-sub-summary {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-size: 20px;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &-item {
+    color: $default-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-default-color;
+    }
+
+    &-title, &-time {
+      font-size: 1rem;
+    }
+
+    &-title {
+      color: $default-color;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-default-color;
+      }
+    }
+
+    &-line {
+      @include transition(all 10s cubic-bezier(.13,.41,.43,.92));
+      border-top: 0.2rem solid $preset3;
+      display: block;
+      width: 0;
+    }
+
+    &-time {
+      color: $default-tint;
+      font-family: $clock;
+      text-align: right;
+      white-space: nowrap;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-default-tint;
+      }
+    }
+
+    &:hover,
+    &:active {
+      .gallery-item-line {
+        width: 100%;
+      }
+
+      .gallery-item-time {
+        color: $default-shade;
+
+        @media (prefers-color-scheme: dark) {
+          color: $dark-default-shade;
+        }
+      }
+    }
+  }
+}

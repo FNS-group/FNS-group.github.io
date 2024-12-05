@@ -1,0 +1,27 @@
+.notfound {
+  position: relative;
+  text-align: center;
+  margin: 4rem 0;
+
+  &-error {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+
+  &-line {
+    border-top: 0.4rem solid $default-shade;
+    display: block;
+    margin: 0 auto 3rem;
+    width: 4rem;
+
+    @media (prefers-color-scheme: dark) {
+      border-top: 0.4rem solid $dark-default-shade;
+    }
+  }
+
+  &-message {
+    max-width: 40rem;
+    font-size: 20px;
+    margin: 5rem auto;
+  }
+}
