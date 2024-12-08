@@ -32,7 +32,8 @@ tags: [Paper]
 
 3. 如下图所示受水下传播时延的影响，导致每个节点传输数据包的传播延迟不同，造成簇头节点R空闲的信道无法及时利用，形成空窗期w，导致信道利用率低。
 
-![to-ast](/images/posts/zhanghuajie/01/02.png)
+![to-ast](/images/posts/zhanghuajie/01/02.PNG)
+![to-ast](/images/posts/zhanghuajie/01/03.PNG)
 
 
 
@@ -56,7 +57,7 @@ AVCW-MAC协议根据每个传感器节点和簇头节点的传播延迟，采用
 
 **实现：**
 
-![to-ast](/images/posts/zhanghuajie/01/03.png)
+![to-ast](/images/posts/zhanghuajie/01/04.PNG)
 
 Dave:评价传播延迟 Di:节点传播延迟 CWi:节点竞争窗口 CWopt:基于CW-MAC的最优竞争窗口  K1、K2:退避因子
 
@@ -76,11 +77,14 @@ Dave:评价传播延迟 Di:节点传播延迟 CWi:节点竞争窗口 CWopt:基�
 
 当CWopt处于(φ1,φ2)区间时，称为过渡阶段。
 
-![to-ast](/images/posts/zhanghuajie/01/04.png)
+![to-ast](/images/posts/zhanghuajie/01/05.PNG)
 
 
+![to-ast](/images/posts/zhanghuajie/01/06.PNG)
 
-![to-ast](/images/posts/zhanghuajie/01/05.png)
+![to-ast](/images/posts/zhanghuajie/01/07.PNG)
+
+![to-ast](/images/posts/zhanghuajie/01/08.PNG)
 
 
 
@@ -96,13 +100,13 @@ Dave:评价传播延迟 Di:节点传播延迟 CWi:节点竞争窗口 CWopt:基�
 
 ### 04 Simulation
 
-![to-ast](/images/posts/zhanghuajie/01/05.png)
-![to-ast](/images/posts/zhanghuajie/01/06.png)
+![to-ast](/images/posts/zhanghuajie/01/09.png)
+![to-ast](/images/posts/zhanghuajie/01/10.png)
 
 模拟常规 CW-MAC 协议，在具有 20 个节点的准静态 UASN 中使用 CW-MAC 协议。得到在CW=143 时可以得到最大网络吞吐量和最低丢包率。最优CWopt=143
 
-![to-ast](/images/posts/zhanghuajie/01/07.png)
-![to-ast](/images/posts/zhanghuajie/01/08.png)
+![to-ast](/images/posts/zhanghuajie/01/11.png)
+![to-ast](/images/posts/zhanghuajie/01/12.png)
 
 结果表明，与传统的CW-MAC协议相比，AVCW-MAC协议的性能要好得多;网络吞吐量提高了约 13.7%，平均端到端延迟降低了约 27.3%。
 
