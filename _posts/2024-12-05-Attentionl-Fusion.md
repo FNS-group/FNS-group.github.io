@@ -5,7 +5,7 @@ categories: paper
 tags: [paper]
 ---
 
-> 看到什么特别的东西就在这里随便记一下。
+
 
 ### Attention Bottlenecks for Multimodal Fusion
 
