@@ -2,7 +2,7 @@
 layout: post
 title: An Efficient Localization Scheme with Velocity Prediction for Large-Scale Underwater Acoustic Sensor Networks
 categories: Paper
-description: Qingrong Chen
+description: Zhichao Tang
 tags: [Paper]
 ---
 
