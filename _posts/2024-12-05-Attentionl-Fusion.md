@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Attention Bottlenecks for Multimodal Fusion
-categories: paper
-tags: [paper]
+categories: Multimodal
+description: Daoxu Qin
+tags: [Multimodal]
 ---
 
 

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: AVCW-MAC：自适应变化竞争窗口MAC 协议
-categories: Paper
+categories: MAC 
 description: Huajie Zhang
-tags: [Paper]
+tags: [MAC]
 ---
 
 ## AVCW-MAC：自适应变化竞争窗口MAC 协议
