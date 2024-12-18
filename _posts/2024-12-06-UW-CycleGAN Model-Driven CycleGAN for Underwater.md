@@ -1,9 +1,9 @@
 ---
 layout: post
 title: UW-CycleGAN：Model-Driven CycleGAN for Underwater Image Restoration
-categories: Paper
+categories: 水下图像修复
 description: Sheng Lei
-tags: [Paper]
+tags: [水下图像修复]
 ---
 
 ### UW-CycleGAN：Model-Driven CycleGAN for Underwater Image Restoration

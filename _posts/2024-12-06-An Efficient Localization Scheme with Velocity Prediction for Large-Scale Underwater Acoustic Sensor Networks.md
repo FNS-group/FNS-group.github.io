@@ -1,9 +1,9 @@
 ---
 layout: post
 title: An Efficient Localization Scheme with Velocity Prediction for Large-Scale Underwater Acoustic Sensor Networks
-categories: Paper
+categories: 水下声学传感器网络（UASNs）的定位
 description: Zhichao Tang
-tags: [Paper]
+tags: [水下声学传感器网络（UASNs）的定位]
 ---
 
 ### An Efficient Localization Scheme with Velocity Prediction for Large-Scale Underwater Acoustic Sensor Networks
